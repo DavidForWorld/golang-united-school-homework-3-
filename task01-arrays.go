@@ -1,5 +1,7 @@
 package homework
 
+import "fmt"
+
 func average(input [15]float32) (result float32) {
 	array := []int{1, 2, 3, 4, 5, 6}
 	N := 6
@@ -8,5 +10,6 @@ func average(input [15]float32) (result float32) {
 		sum += (array[i])
 	}
 	avg := (float32(sum)) / (float32(N))
+	fmt.Println("Sum = ", sum, "\nAverage = ", avg)
 	return
 }
