@@ -3,15 +3,11 @@ package homework
 import (
 	"sort"
 )
-
-func reverse(input []int64) (result []int64) {
-	nums := []int64{1, 2, 5, 15}
-	ReverseSlice(nums)
+func reverse(s interface{}) {
+    n := reflect.ValueOf(s).Len()
+    swap := reflect.Swapper(s)
+    for i, j := 0, n-1; i < j; i, j = i+1, j-1 {
+        swap(i, j)
+    }
 }
-
-func ReverseSlice[T comparable](s []T) {
-	sort.SliceStable(s, func(i, j int) bool {
-		return i > j
-	})
-	return
 }
